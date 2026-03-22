@@ -2,7 +2,7 @@
 
 The following instructions will guide you through the process of installing VMware Workstation Pro on an Ubuntu system, with Secure Boot enabled. This setup is inspired by the following resources:
 
-- (https://knowledge.broadcom.com/external/article/344595/downloading-vmware-workstation-pro.html)[https://knowledge.broadcom.com/external/article/344595/downloading-vmware-workstation-pro.html]
+- [https://knowledge.broadcom.com/external/article/344595/downloading-vmware-workstation-pro.html](https://knowledge.broadcom.com/external/article/344595/downloading-vmware-workstation-pro.html)
 
 ## Step 1: Install Required Packages
 
@@ -16,7 +16,7 @@ sudo apt-get install build-essential linux-headers-$(uname -r)
 
 You can download VMware Workstation Pro from the official Broadcom support site:
 
-(https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro&freeDownloads=true)[https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro&freeDownloads=true]
+[https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro&freeDownloads=true](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro&freeDownloads=true)
 
 ## Step 3: Install VMware Workstation Pro
 
