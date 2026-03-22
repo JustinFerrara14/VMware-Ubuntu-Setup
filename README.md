@@ -59,15 +59,19 @@ In the UEFI menu, navigate to the "Enroll MOK" option and follow the prompts:
 If you are running a virtual machine within VMware Workstation Pro, it is recommended to install Open VM Tools for better performance and integration. You can do this by running the following commands in the terminal of your Ubuntu VM:
 
 ```bash
+# Update package lists and install Open VM Tools
 sudo apt update
 sudo apt install open-vm-tools open-vm-tools-desktop -y
 
+# Enable and start the Open VM Tools service
 sudo systemctl enable open-vm-tools
 sudo systemctl start open-vm-tools
 systemctl status open-vm-tools
 
+# Reboot the VM to apply changes
 sudo reboot now
 
+# Mount shared folders (if configured)
 sudo mkdir -p /mnt/hgfs
 sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
 ```
