@@ -9,6 +9,7 @@ The following instructions will guide you through the process of installing VMwa
 Open a terminal and run the following command to install the necessary build tools and kernel headers:
 
 ```bash
+sudo apt update
 sudo apt-get install build-essential linux-headers-$(uname -r)
 ```
 
