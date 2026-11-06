@@ -55,6 +55,17 @@ In the UEFI menu, navigate to the "Enroll MOK" option and follow the prompts:
 - Enter the password you created during the `mokutil --import` step
 - Reboot
 
+## Update the VMware Modules
+
+```bash
+# Install the modules
+sudo vmware-modconfig --console --install-all
+
+# Sign the new modules with the same key
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE.priv ./VMWARE.der $(modinfo -n vmmon)
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE.priv ./VMWARE.der $(modinfo -n vmnet)
+```
+
 ## Extra: Install Open VM Tools on a VM in Workstation Pro
 
 If you are running a virtual machine within VMware Workstation Pro, it is recommended to install Open VM Tools for better performance and integration. You can do this by running the following commands in the terminal of your Ubuntu VM:
