@@ -55,15 +55,22 @@ In the UEFI menu, navigate to the "Enroll MOK" option and follow the prompts:
 - Enter the password you created during the `mokutil --import` step
 - Reboot
 
-## Update the VMware Modules
+## Update the VMware Modules (after a kernel update)
 
 ```bash
+sudo apt update
+
 # Install the modules
 sudo vmware-modconfig --console --install-all
 
 # Sign the new modules with the same key
 sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE.priv ./VMWARE.der $(modinfo -n vmmon)
 sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE.priv ./VMWARE.der $(modinfo -n vmnet)
+
+# Load the modules and restart VMware services
+sudo modprobe vmmon
+sudo modprobe vmnet
+sudo systemctl restart vmware
 ```
 
 ## Extra: Install Open VM Tools on a VM in Workstation Pro
